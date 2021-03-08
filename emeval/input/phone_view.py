@@ -136,6 +136,7 @@ class PhoneView:
         # re-sort transitions into proper order -- START and STOP transitions must alternate
         for i in range(0, len(transition_list)-2, 2):
             if "START" in transition_list[i]["transition"] and "START" in transition_list[i+1]["transition"] and "STOP" in transition_list[i+2]["transition"]:
+                print("="*20, f"Swapping transitions {transition_list[i+1]}, {transition_list[i+2]}", "="*20)
                 transition_list[i+1], transition_list[i+2] = transition_list[i+2], transition_list[i+1]
 
         start_transitions = transition_list[::2]
